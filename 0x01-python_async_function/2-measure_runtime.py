@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Runtime measurement
+Runtime neasurement
 """
 import asyncio
 import time
@@ -15,6 +15,6 @@ def measure_time(n: int, max_delay: int) -> float:
     """
     start = time.perf_counter()
     asyncio.run(wait_n(n, max_delay))
-    total = time.perf_counter() - start
-
-    return total
+    end = time.perf_counter()
+    total_time = end - start
+    return total_time / n
