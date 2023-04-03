@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
-This is multiple coroutine with the async
+Multiple
 """
-
 import asyncio
-import random
+from typing import List
 
 
-async def wait_random(max_delay: int = 10) -> float:
+wait_random = __import__('0-basic_async_syntax').wait_random
+
+
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Executing Multiple Coroutine thesame time with async
-    """
-    delay = random.uniform(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+     Executing Multiple Coroutine withthe async
+     """
+    delays = []
+    for _ in range(n):
+        delay = await wait_random(max_delay)
+        delays.append(delay)
+    delays = sorted(delays)
+    return delays
