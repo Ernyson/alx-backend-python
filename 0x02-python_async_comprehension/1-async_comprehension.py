@@ -15,5 +15,5 @@ async def async_comprehension() -> List[float]:
     """
     The assyncronous comp will collect 10 roundom numbers
     """
-    random_numbers = [num async for num in async_generator()]
-    return random_numbers[:10]
+    random_numb = [num async for num in async_generator()]
+    return random_numb[:10]
